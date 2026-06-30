@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anuvaad — English to Hindi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=Noto+Serif+Devanagari:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="masthead">
+    <span class="eyebrow">scratch-built transformer · runs on localhost</span>
+    <h1>अनुवाद<span class="latin">Anuvaad</span></h1>
+    <p class="sub">English &rarr; हिन्दी, decoded by a transformer trained from scratch on your machine.</p>
+  </header>
+
+  <main class="bench">
+    <section class="pane source">
+      <div class="pane-label">English</div>
+      <textarea id="input" placeholder="Type a sentence to translate&#10;e.g. The weather is nice today."></textarea>
+      <div class="pane-foot">
+        <span id="charcount" class="count">0 chars</span>
+      </div>
+    </section>
+
+    <div class="seam" aria-hidden="true">
+      <div class="seam-line"></div>
+      <div class="seam-mark">→</div>
+      <div class="seam-line"></div>
+    </div>
+
+    <section class="pane target">
+      <div class="pane-label">हिन्दी</div>
+      <div id="output" class="output" data-empty="true">अनुवाद यहाँ दिखेगा…</div>
+      <div class="pane-foot">
+        <span id="status" class="count"></span>
+      </div>
+    </section>
+  </main>
+
+  <div class="controls">
+    <div class="modes" role="radiogroup" aria-label="Decoding strategy">
+      <button class="mode active" data-mode="beam" role="radio" aria-checked="true">Beam search</button>
+      <button class="mode" data-mode="greedy" role="radio" aria-checked="false">Greedy</button>
+    </div>
+    <button id="go" class="translate-btn">Translate</button>
+  </div>
+
+  <footer class="colophon">
+    <span>encoder–decoder · multi-head self-attention · sinusoidal positions</span>
+  </footer>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
