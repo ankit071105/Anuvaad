@@ -8,6 +8,11 @@ leaves your machine. A small Flask app lets you use it from the browser.
 This is a *learning* build. The point is understanding the architecture, not
 beating Google Translate.
 
+
+
+<img width="1252" height="847" alt="Screenshot 2026-06-30 at 10 22 09 PM" src="https://github.com/user-attachments/assets/30541b84-9b6d-4ff2-8238-919b15da089f" />
+
+
 ## What's where (map to the concepts)
 
 | File | What it teaches |
